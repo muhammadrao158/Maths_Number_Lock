@@ -1,0 +1,75 @@
+.game-board {
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.end-run-button {
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.end-run-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+.end-run-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: rgba(158, 158, 158, 0.5);
+  box-shadow: none;
+}
+
+.locks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .locks-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .game-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .end-run-button {
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .locks-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1025px) {
+  .locks-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
